@@ -7,7 +7,6 @@ import profile from '../assets/image-avatar.jpg'
 import { motion } from 'framer-motion'
 
 
-
 function Header() {
 
   const [colorTheme, setTheme] = useDarkMode();
@@ -43,11 +42,14 @@ function Header() {
           </div>
 
 
+
           <div className=' relative  '>
             <img src={profile} className='h-[50px] rounded-full' />
           </div>
         </div>
       </header>
+
+      
 
       <div className=' z-50 hidden lg:block '>
         <div className=' fixed  z-50  w-[100px] rounded-r-3xl  flex-col  top-0 left-0 h-screen dark:bg-[#1E2139]  bg-[#373b53]'>
@@ -58,7 +60,7 @@ function Header() {
 
             <img src={logo} className="relative" />
 
-            <div>
+            <div className=''>
               {colorTheme === "light" ? 
               <motion.img onClick={toggleDarkMode} initial={{ scale: 0.6, rotate: 90 }} animate={{ scale: 1, rotate: 360, transition }} whileTap={{ scale: 0.9, rotate: 15 }} src={moon} className='cursor-pointer ml-8 h-6'
               />
@@ -68,6 +70,7 @@ function Header() {
 
               <div className=' w-[100px] border-dotted border-t border-[#494e6e] my-6'>
               </div>
+
 
 
               <div className=' relative  ml-4 mb-4 '>

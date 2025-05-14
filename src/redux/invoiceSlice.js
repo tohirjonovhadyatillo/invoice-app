@@ -10,7 +10,7 @@ export const fetchInvoices = createAsyncThunk(
       const response = await axios.get(API_BASE_URL);
       return response.data.data.map(invoice => ({
         ...invoice,
-        id: invoice.id.toString() // Ensure ID is always string
+        id: invoice.id.toString() 
       }));
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);

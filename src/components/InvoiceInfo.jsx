@@ -39,7 +39,7 @@ function InvoiceInfo({ onDelete }) {
   }, [id, dispatch]);
 
   const onMakePaidClick = () => {
-    dispatch(updateStatusAPI({ id: invoice.id, status: "Paid" })).then(() => {
+    dispatch(updateStatusAPI({ id: invoice.id, status: "paid" })).then(() => {
       dispatch(getInvoiceById({ id: invoice.id }));
     });
   };
@@ -126,7 +126,7 @@ function InvoiceInfo({ onDelete }) {
               >
                 Delete
               </button>
-              {invoice.status === "Pending" && (
+              {invoice.status === "pending" && (
                 <button
                   onClick={onMakePaidClick}
                   className="ml-3 text-center text-white bg-[#7c5dfa] hover:opacity-80 p-3 px-7 rounded-full"
@@ -280,7 +280,7 @@ function InvoiceInfo({ onDelete }) {
           >
             Delete
           </button>
-          {invoice.status === "Pending" && (
+          {invoice.status === "Pending" | "pending" && (
             <button
               onClick={() => {
                 onMakePaidClick(invoice.id);
